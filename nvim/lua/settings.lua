@@ -17,3 +17,5 @@ set.tabstop = 2
 -- 展示特殊字段
 set.list = true
 set.listchars = "space:·,tab:>~"
+
+-- set.mapleader = "<Space>"
