@@ -3,9 +3,6 @@ local set = vim.opt
 -- 展示行号
 set.number = true
 
--- 展示相对行号
-set.relativenumber = true
-
 -- tab 键替换成对应的 space
 set.expandtab = true
 

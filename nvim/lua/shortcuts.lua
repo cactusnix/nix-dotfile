@@ -38,4 +38,4 @@ map("n", "nt", ":NvimTreeToggle<CR>", opt)
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 
 -- null ls plugin
-map("n", "<Leader>f", "<Cmd>vim.lsp.buf.format()<CR>", opt)
+map("n", "<C-f>", ":lua vim.lsp.buf.format()<CR>", opt)
