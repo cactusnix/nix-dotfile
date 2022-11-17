@@ -8,4 +8,5 @@ mason_lspconfig.setup({
   ensure_installed = { "sumneko_lua" }
 })
 
-lspconfig.sumneko_lua.setup{}
+lspconfig.sumneko_lua.setup {}
+lspconfig.astro.setup {}

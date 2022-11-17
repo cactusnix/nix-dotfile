@@ -4,7 +4,7 @@ packer.startup({
   function(use)
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
-    -- lsp config 
+    -- lsp config
     use "neovim/nvim-lspconfig"
     -- lsp server manage
     use "williamboman/mason.nvim"
@@ -26,7 +26,7 @@ packer.startup({
     use "hrsh7th/cmp-vsnip"
     -- inner lsp
     use "hrsh7th/cmp-nvim-lsp"
-    -- buffer 
+    -- buffer
     use "hrsh7th/cmp-buffer"
     -- path
     use "hrsh7th/cmp-path"
@@ -40,7 +40,7 @@ packer.startup({
       }
     }
     -- trouble
-    use { 
+    use {
       "folke/trouble.nvim",
       requires = {
         "nvim-tree/nvim-web-devicons"
@@ -67,6 +67,8 @@ packer.startup({
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate"
     }
+    -- kitty terminal
+    use "fladson/vim-kitty"
   end,
   config = {
     display = {

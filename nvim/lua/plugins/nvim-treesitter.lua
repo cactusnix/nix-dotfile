@@ -2,7 +2,7 @@
 local config = require("nvim-treesitter.configs")
 
 config.setup({
-  ensure_installed = {"lua"},
+  ensure_installed = { "lua", "astro" },
   highlight = {
     enable = true,
     -- disable the vim highlight
