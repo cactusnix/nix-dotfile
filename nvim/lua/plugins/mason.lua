@@ -5,8 +5,8 @@ local lspconfig = require("lspconfig")
 mason.setup()
 
 mason_lspconfig.setup({
-  ensure_installed = { "sumneko_lua" }
+  ensure_installed = { "lua_ls" }
 })
 
-lspconfig.sumneko_lua.setup {}
+lspconfig.lua_ls.setup {}
 lspconfig.astro.setup {}
