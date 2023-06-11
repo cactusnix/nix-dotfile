@@ -2,4 +2,6 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
-keymap.set("i", "ii", "<ESC>") -- ii 推出插入模式
+keymap.set("i", "ii", "<ESC>") -- ii replace ecs
+
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- file tree toggle

@@ -10,3 +10,36 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
+local plugins = {
+  "folke/tokyonight.nvim", -- theme
+  {
+    "nvim-lualine/lualine.nvim", -- status line
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      lazy = true
+    }
+  },
+  "nvim-treesitter/nvim-treesitter", -- highlight
+  {
+    "nvim-tree/nvim-tree.lua", -- file tree
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      lazy = true
+    }
+  },
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/vim-vsnip",
+  "hrsh7th/cmp-vsnip",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline"
+}
+
+local opts = {}
+
+require("lazy").setup(plugins, opts)
