@@ -46,7 +46,8 @@ local plugins = {
     dependencies = {
       "nvim-lua/plenary.nvim"
     }
-  }
+  },
+  "jose-elias-alvarez/null-ls.nvim"
 }
 
 local opts = {}
