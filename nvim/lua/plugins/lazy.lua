@@ -50,6 +50,11 @@ local plugins = {
 	"jose-elias-alvarez/null-ls.nvim",
 	"glepnir/lspsaga.nvim",
 	"lewis6991/gitsigns.nvim",
+	"dstein64/vim-startuptime",
+	"windwp/nvim-autopairs",
+	"numToStr/Comment.nvim",
+	"folke/which-key.nvim",
+	"glepnir/dashboard-nvim",
 }
 
 local opts = {}
