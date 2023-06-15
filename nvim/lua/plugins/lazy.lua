@@ -12,7 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	"folke/tokyonight.nvim", -- theme
+	"folke/tokyonight.nvim",
+	"catppuccin/nvim",
+	"akinsho/bufferline.nvim",
 	{
 		"nvim-lualine/lualine.nvim", -- status line
 		dependencies = {
