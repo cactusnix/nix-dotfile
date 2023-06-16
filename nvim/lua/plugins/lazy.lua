@@ -57,6 +57,8 @@ local plugins = {
 	"numToStr/Comment.nvim",
 	"folke/which-key.nvim",
 	"glepnir/dashboard-nvim",
+	"jay-babu/mason-null-ls.nvim",
+	"jay-babu/mason-nvim-dap.nvim",
 }
 
 local opts = {}
