@@ -4,7 +4,7 @@ cmp.setup({
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body)
-    end
+    end,
   },
   mapping = cmp.mapping.preset.insert({
     -- prev
@@ -12,29 +12,29 @@ cmp.setup({
     -- next
     ["<C-j>"] = cmp.mapping.select_next_item(),
     -- selected
-    ["<CR>"] = cmp.mapping.confirm({ select = true })
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
-    { name = "vsnip" }
+    { name = "vsnip" },
   }, {
     { name = "buffer" },
-    { name = "path" }
-  })
+    { name = "path" },
+  }),
 })
 
 cmp.setup.cmdline("/", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = "buffer" }
-  }
+    { name = "buffer" },
+  },
 })
 
 cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = "path" }
+    { name = "path" },
   }, {
-    { name = "cmdline" }
-  })
+    { name = "cmdline" },
+  }),
 })

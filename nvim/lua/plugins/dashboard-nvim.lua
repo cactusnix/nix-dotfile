@@ -1,3 +1,3 @@
 require("dashboard").setup({
-	theme = "doom",
+  theme = "doom",
 })
