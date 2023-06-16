@@ -25,7 +25,7 @@ local plugins = {
   },
   "nvim-treesitter/nvim-treesitter", -- highlight
   {
-    "nvim-tree/nvim-tree.lua", -- file tree
+    "nvim-tree/nvim-tree.lua",       -- file tree
     dependencies = {
       "nvim-tree/nvim-web-devicons",
       lazy = true,
