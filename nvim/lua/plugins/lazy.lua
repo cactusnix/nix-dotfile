@@ -15,6 +15,7 @@ local plugins = {
 	"folke/tokyonight.nvim",
 	"catppuccin/nvim",
 	"akinsho/bufferline.nvim",
+	"folke/todo-comments.nvim",
 	{
 		"nvim-lualine/lualine.nvim", -- status line
 		dependencies = {
@@ -59,6 +60,7 @@ local plugins = {
 	"glepnir/dashboard-nvim",
 	"jay-babu/mason-null-ls.nvim",
 	"jay-babu/mason-nvim-dap.nvim",
+	"folke/trouble.nvim",
 }
 
 local opts = {}
