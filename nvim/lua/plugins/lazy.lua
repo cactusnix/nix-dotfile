@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- dependencies for other plugins
+  "MunifTanjim/nui.nvim", -- UI Component Libray
   "folke/tokyonight.nvim",
   "catppuccin/nvim",
   "akinsho/bufferline.nvim",
@@ -61,6 +63,8 @@ local plugins = {
   "jay-babu/mason-null-ls.nvim",
   "jay-babu/mason-nvim-dap.nvim",
   "folke/trouble.nvim",
+  "akinsho/toggleterm.nvim",
+  "folke/noice.nvim",
 }
 
 local opts = {}
