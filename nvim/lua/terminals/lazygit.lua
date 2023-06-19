@@ -1,13 +1,14 @@
+local opts = require("constants.options")
 local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new({ cmd = "lazygit" })
+local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
 
-local function lazygit_toggle()
+function _lazygit_toggle()
   lazygit:toggle()
 end
 
 vim.api.nvim_set_keymap(
   "n",
   "<leader>g",
-  ":lua lazygit_toggle()<CR>",
-  { noremap = true, silent = true }
+  ":lua _lazygit_toggle()<CR>",
+  opts.KEY_MAP_OPTS
 )
