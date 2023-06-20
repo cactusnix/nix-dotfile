@@ -18,6 +18,7 @@ local plugins = {
   "catppuccin/nvim",
   "akinsho/bufferline.nvim",
   "folke/todo-comments.nvim",
+  "gelguy/wilder.nvim",
   {
     "nvim-lualine/lualine.nvim", -- status line
     dependencies = {

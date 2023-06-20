@@ -1,0 +1,7 @@
+require("wilder").setup({
+  modes = {
+    ":",
+    "/",
+    "?",
+  },
+})
