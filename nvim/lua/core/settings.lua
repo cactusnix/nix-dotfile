@@ -12,4 +12,3 @@ opt.tabstop = 2
 -- Appearance
 opt.termguicolors = true
 opt.signcolumn = "yes"
-vim.cmd([[colorscheme tokyonight-moon]])
