@@ -1,15 +1,16 @@
 vim.g.mapleader = " "
 
-local keymap = vim.keymap
+local keymap = vim.api.nvim_set_keymap
+local opts = require("constants.options").KEY_MAP_OPTS
 
-keymap.set("i", "ii", "<ESC>")
-keymap.set("n", "q", ":q<CR>")
-keymap.set("n", "qf", ":q!<CR>")
-keymap.set("n", "w", ":w<CR>")
-keymap.set("n", "qa", ":wqall<CR>")
-keymap.set("n", "<C-h>", "<C-w>h")
-keymap.set("n", "<C-j>", "<C-w>j")
-keymap.set("n", "<C-k>", "<C-w>k")
-keymap.set("n", "<C-l>", "<C-w>l")
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
-keymap.set("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>")
+keymap("i", "ii", "<ESC>", opts)
+keymap("n", "q", ":q<CR>", opts)
+keymap("n", "qf", ":q!<CR>", opts)
+keymap("n", "w", ":w<CR>", opts)
+keymap("n", "qa", ":wqall<CR>", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>", opts)
