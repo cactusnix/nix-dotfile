@@ -6,7 +6,6 @@ return {
   event = "VimEnter",
   opts = {
     theme = "doom",
-    shortcut_type = "number",
     config = {
       header = {
         "                                                       ",
@@ -26,12 +25,17 @@ return {
       center = {
         {
           icon = "",
-          icon_hl = "group",
-          desc = "description",
-          desc_hl = "group",
-          key = "shortcut key in dashboard buffer not keymap !!",
-          key_hl = "group",
-          action = "",
+          desc = "Find File                                    ",
+          key = "<leader> f f",
+          keymap = "<leader>ff",
+          action = "<leader>ff",
+        },
+        {
+          icon = "",
+          desc = "Quit NeoVim                                  ",
+          key = "q",
+          keymap = "q",
+          action = "q",
         },
       },
     },
