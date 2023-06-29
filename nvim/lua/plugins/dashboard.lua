@@ -1,8 +1,5 @@
 return {
   "glepnir/dashboard-nvim",
-  dependencies = {
-    {},
-  },
   event = "VimEnter",
   opts = {
     theme = "doom",
@@ -29,13 +26,6 @@ return {
           key = "<leader> f f",
           keymap = "<leader>ff",
           action = "<leader>ff",
-        },
-        {
-          icon = "",
-          desc = "Quit NeoVim                                  ",
-          key = "q",
-          keymap = "q",
-          action = "q",
         },
       },
     },
