@@ -11,4 +11,7 @@ return {
   config = function(_, opts)
     require("auto-dark-mode").setup(opts)
   end,
+  init = function()
+    require("auto-dark-mode").init()
+  end,
 }
