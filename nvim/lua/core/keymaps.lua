@@ -4,7 +4,6 @@ local keymap = vim.api.nvim_set_keymap
 local opts = require("constants.options").KEY_MAP_OPTS
 
 keymap("i", "ii", "<ESC>", opts)
-keymap("n", "q", ":q<CR>", opts)
 keymap("n", "qf", ":q!<CR>", opts)
 keymap("n", "<C-s>", ":w<CR>", opts)
 keymap("n", "qn", ":quitall<CR>", opts)
