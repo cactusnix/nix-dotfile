@@ -1,4 +1,4 @@
-local opts = require("constants.options").KEY_MAP_OPTS
+local opts = require("constants.options").KEYMAP_OPTS
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
 

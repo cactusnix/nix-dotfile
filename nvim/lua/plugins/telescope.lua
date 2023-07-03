@@ -5,7 +5,7 @@ return {
   },
   config = function()
     local keymap = vim.api.nvim_set_keymap
-    local opts = require("constants.options").KEY_MAP_OPTS
+    local opts = require("constants.options").KEYMAP_OPTS
     keymap(
       "n",
       "<leader>ff",

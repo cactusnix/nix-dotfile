@@ -1,6 +1,6 @@
 local M = {}
 
-M.KEY_MAP_OPTS = {
+M.KEYMAP_OPTS = {
   noremap = true,
   silent = true,
 }
