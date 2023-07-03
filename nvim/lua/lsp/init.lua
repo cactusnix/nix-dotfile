@@ -4,7 +4,7 @@ local diagnostic_signs = {
     text = "",
   },
   { name = "DiagnosticSignWarn", text = "" },
-  { name = "DiagnosticSignHint", text = "💡" },
+  { name = "DiagnosticSignHint", text = "" },
   { name = "DiagnosticSignInfo", text = "" },
 }
 for _, sign in ipairs(diagnostic_signs) do
