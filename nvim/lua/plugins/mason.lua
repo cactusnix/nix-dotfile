@@ -19,17 +19,20 @@ return {
     lsp = {
       ensure_installed = {
         "lua_ls",
+        "jsonls",
       },
     },
-    format = {
+    null_ls = {
       ensure_installed = {
         "stylua",
+        "prettier",
+        "jsonlint",
       },
     },
   },
   config = function(_, opts)
     require("mason").setup(opts.mason)
     require("mason-lspconfig").setup(opts.lsp)
-    require("mason-null-ls").setup(opts.format)
+    require("mason-null-ls").setup(opts.null_ls)
   end,
 }
