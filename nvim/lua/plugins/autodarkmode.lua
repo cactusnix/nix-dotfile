@@ -8,10 +8,10 @@ return {
       vim.api.nvim_set_option("background", "light")
     end,
   },
-  config = function(_, opts)
-    require("auto-dark-mode").setup(opts)
-  end,
-  init = function()
-    require("auto-dark-mode").init()
-  end,
+  -- config = function(_, opts)
+  --   require("auto-dark-mode").setup(opts)
+  -- end,
+  -- init = function()
+  --   require("auto-dark-mode").init()
+  -- end,
 }
