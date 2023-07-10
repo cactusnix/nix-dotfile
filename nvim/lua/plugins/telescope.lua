@@ -5,30 +5,30 @@ return {
   },
   config = function()
     local keymap = vim.api.nvim_set_keymap
-    local opts = require("constants.options").KEYMAP_OPTS
+    local get_keymap_opts = require("utils.opts").get_keymap_opts
     keymap(
       "n",
       "<leader>ff",
       ":lua require('telescope.builtin').find_files()<CR>",
-      opts
+      get_keymap_opts("Find files by name int current dir")
     )
     keymap(
       "n",
       "<leader>fg",
       ":lua require('telescope.builtin').live_grep()<CR>",
-      opts
+      get_keymap_opts("Find files by text in current dir")
     )
     keymap(
       "n",
       "<leader>fb",
       ":lua require('telescope.builtin').buffers()<CR>",
-      opts
+      get_keymap_opts("Find files by name in current buffers")
     )
     keymap(
       "n",
       "<leader>fh",
       ":lua require('telescope.builtin').help_tags()<CR>",
-      opts
+      get_keymap_opts()
     )
   end,
 }
