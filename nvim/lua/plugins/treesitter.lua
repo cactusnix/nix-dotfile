@@ -7,6 +7,8 @@ return {
       "vim",
       "vimdoc",
       "markdown",
+      "swift",
+      "json",
     },
     sync_install = true,
     auto_install = false,
