@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+-- Feature
+opt.swapfile = false
+
 -- Line
 opt.number = true
 
