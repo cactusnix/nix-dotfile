@@ -1,3 +1,4 @@
+-- TODO: Remove null ls plugin due to it will be archived
 return {
   "jose-elias-alvarez/null-ls.nvim",
   dependencies = {
