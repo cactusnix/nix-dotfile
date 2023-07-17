@@ -11,13 +11,13 @@ return {
       "n",
       "gD",
       "<cmd> Lspsaga goto_type_definition <CR>",
-      get_keymap_opts("Go to type definition")
+      get_keymap_opts("Goto type definition")
     )
     keymap(
       "n",
       "gd",
       "<cmd> Lspsaga goto_definition <CR>",
-      get_keymap_opts("Go to definition")
+      get_keymap_opts("Goto definition")
     )
     require("lspsaga").setup()
   end,

@@ -23,3 +23,21 @@ keymap(
   "<cmd> enew <CR>",
   get_keymap_opts("Create new buffer")
 )
+keymap(
+  "n",
+  "<leader>bn",
+  "<cmd> bnext <CR>",
+  get_keymap_opts("Goto next buffer")
+)
+keymap(
+  "n",
+  "<leader>bp",
+  "<cmd> bprevious <CR>",
+  get_keymap_opts("Goto previous buffer")
+)
+keymap(
+  "n",
+  "<leader>bd",
+  "<cmd> bdelete <CR>",
+  get_keymap_opts("Close current buffer")
+)
