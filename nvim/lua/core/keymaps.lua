@@ -23,17 +23,3 @@ keymap(
   "<cmd> enew <CR>",
   get_keymap_opts("Create new buffer")
 )
-
--- Plugins
-keymap(
-  "n",
-  "<C-n>",
-  "<cmd> NvimTreeToggle <CR>",
-  get_keymap_opts("Toggle nvim tree")
-)
-keymap(
-  "n",
-  "<leader>e",
-  "<cmd> NvimTreeFocus <CR>",
-  get_keymap_opts("Foucs nvim tree")
-)
