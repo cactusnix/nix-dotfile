@@ -5,6 +5,7 @@ opt.swapfile = false
 
 -- Line
 opt.number = true
+opt.relativenumber = true
 
 -- Space & Tab
 opt.expandtab = true
