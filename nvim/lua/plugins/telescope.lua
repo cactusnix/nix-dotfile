@@ -9,26 +9,32 @@ return {
     keymap(
       "n",
       "<leader>ff",
-      ":lua require('telescope.builtin').find_files()<CR>",
+      "<cmd> Telescope find_files <CR>",
       get_keymap_opts("Find files by name int current dir")
     )
     keymap(
       "n",
-      "<leader>fg",
-      ":lua require('telescope.builtin').live_grep()<CR>",
-      get_keymap_opts("Find files by text in current dir")
+      "<leader>fw",
+      "<cmd> Telescope live_grep <CR>",
+      get_keymap_opts("Find files by word in current dir")
     )
     keymap(
       "n",
       "<leader>fb",
-      ":lua require('telescope.builtin').buffers()<CR>",
+      "<cmd> Telescope buffers <CR>",
       get_keymap_opts("Find files by name in current buffers")
     )
     keymap(
       "n",
       "<leader>fh",
-      ":lua require('telescope.builtin').help_tags()<CR>",
-      get_keymap_opts()
+      "<cmd> Telescope help_tags <CR>",
+      get_keymap_opts("Find help pages")
+    )
+    keymap(
+      "n",
+      "<leader>fz",
+      "<cmd> Telescope current_buffer_fuzzy_find <CR>",
+      get_keymap_opts("Find in current buffer")
     )
   end,
 }
