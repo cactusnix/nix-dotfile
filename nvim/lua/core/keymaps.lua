@@ -17,27 +17,3 @@ keymap("n", "<C-h>", "<C-w>h", get_keymap_opts("Window cursor move left"))
 keymap("n", "<C-j>", "<C-w>j", get_keymap_opts("Window cursor move down"))
 keymap("n", "<C-k>", "<C-w>k", get_keymap_opts("Window cursor move up"))
 keymap("n", "<C-l>", "<C-w>l", get_keymap_opts("Window cursor move right"))
-keymap(
-  "n",
-  "<leader>b",
-  "<cmd> enew <CR>",
-  get_keymap_opts("Create new buffer")
-)
-keymap(
-  "n",
-  "<leader>bn",
-  "<cmd> bnext <CR>",
-  get_keymap_opts("Goto next buffer")
-)
-keymap(
-  "n",
-  "<leader>bp",
-  "<cmd> bprevious <CR>",
-  get_keymap_opts("Goto previous buffer")
-)
-keymap(
-  "n",
-  "<leader>bd",
-  "<cmd> bdelete <CR>",
-  get_keymap_opts("Close current buffer")
-)
