@@ -28,13 +28,25 @@ return {
       "n",
       "<leader>fh",
       "<cmd> Telescope help_tags <CR>",
-      get_keymap_opts("Find help pages")
+      get_keymap_opts("Find help pages by name")
     )
     keymap(
       "n",
       "<leader>fz",
       "<cmd> Telescope current_buffer_fuzzy_find <CR>",
-      get_keymap_opts("Find in current buffer")
+      get_keymap_opts("Find text by word in current buffer")
+    )
+    keymap(
+      "n",
+      "<leader>cm",
+      "<cmd> Telescope git_commits <CR>",
+      get_keymap_opts("Find commits by word in git commits")
+    )
+    keymap(
+      "n",
+      "<leader>gt",
+      "<cmd> Telescope git_status <CR>",
+      get_keymap_opts("Find files by name in git status")
     )
   end,
 }
