@@ -7,6 +7,7 @@ glob.loaded_netrwPlugin = 1
 
 -- Feature
 opt.swapfile = false
+opt.wrap = false
 
 -- Line
 opt.number = true
