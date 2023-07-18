@@ -1,4 +1,9 @@
 local opt = vim.opt
+local glob = vim.g
+
+-- Global
+glob.loaded_netrw = 1
+glob.loaded_netrwPlugin = 1
 
 -- Feature
 opt.swapfile = false
