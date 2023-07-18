@@ -2,8 +2,22 @@ return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+    },
   },
-  config = function()
+  opts = {
+    extensions = {
+      fzf = {
+        fuzzy = true,
+        override_generic_sorter = true,
+        override_file_sorter = true,
+        case_mode = "smart_case",
+      },
+    },
+  },
+  config = function(_, opts)
     local keymap = vim.api.nvim_set_keymap
     local get_keymap_opts = require("utils.opts").get_keymap_opts
     keymap(
@@ -48,5 +62,8 @@ return {
       "<cmd> Telescope git_status <CR>",
       get_keymap_opts("Find files by name in git status")
     )
+    local telescope = require("telescope")
+    telescope.setup(opts)
+    telescope.load_extension("fzf")
   end,
 }
