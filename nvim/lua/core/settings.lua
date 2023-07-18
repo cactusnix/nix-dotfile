@@ -8,6 +8,9 @@ glob.loaded_netrwPlugin = 1
 -- Feature
 opt.swapfile = false
 opt.wrap = false
+opt.showmode = false
+opt.autoread = true
+opt.completeopt = { "menuone", "preview", "noselect" }
 
 -- Line
 opt.number = true
