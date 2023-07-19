@@ -1,8 +1,5 @@
 return {
   "glepnir/lspsaga.nvim",
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
   event = "LspAttach",
   config = function()
     local keymap = vim.api.nvim_set_keymap
