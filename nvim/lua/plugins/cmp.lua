@@ -18,11 +18,8 @@ return {
         end,
       },
       mapping = cmp.mapping.preset.insert({
-        -- prev
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
-        -- next
-        ["<C-j>"] = cmp.mapping.select_next_item(),
-        -- selected
+        ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+        ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
       }),
       sources = cmp.config.sources({

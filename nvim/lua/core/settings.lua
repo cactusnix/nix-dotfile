@@ -11,6 +11,8 @@ opt.wrap = false
 opt.showmode = false
 opt.autoread = true
 opt.completeopt = { "menuone", "preview", "noselect" }
+opt.ignorecase = true
+opt.smartcase = true
 
 -- Line
 opt.number = true
