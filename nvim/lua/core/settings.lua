@@ -17,6 +17,7 @@ opt.smartcase = true
 -- Line
 opt.number = true
 opt.relativenumber = true
+opt.cursorline = true
 
 -- Space & Tab
 opt.expandtab = true
