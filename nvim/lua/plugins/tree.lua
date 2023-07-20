@@ -5,10 +5,8 @@ return {
   opts = {
     disable_netrw = true,
     hijack_cursor = true,
-    view = {
-      hide_root_folder = true,
-    },
     renderer = {
+      root_folder_label = false,
       icons = {
         git_placement = "after",
       },
