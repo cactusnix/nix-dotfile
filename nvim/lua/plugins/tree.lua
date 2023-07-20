@@ -3,6 +3,8 @@ local icons = require("constants.icons")
 return {
   "nvim-tree/nvim-tree.lua",
   opts = {
+    disable_netrw = true,
+    hijack_cursor = true,
     view = {
       hide_root_folder = true,
     },
@@ -23,7 +25,6 @@ return {
     git = {
       enable = true,
       show_on_dirs = false,
-      show_on_open_dirs = false,
     },
   },
   config = function(_, opts)
