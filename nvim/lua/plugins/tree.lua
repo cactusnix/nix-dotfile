@@ -31,15 +31,9 @@ return {
     local get_keymap_opts = require("utils.opts").get_keymap_opts
     keymap(
       "n",
-      "<C-n>",
+      "<leader>e",
       "<cmd> NvimTreeToggle <CR>",
       get_keymap_opts("Toggle nvim tree")
-    )
-    keymap(
-      "n",
-      "<leader>e",
-      "<cmd> NvimTreeFocus <CR>",
-      get_keymap_opts("Foucs nvim tree")
     )
     require("nvim-tree").setup(opts)
   end,
