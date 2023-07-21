@@ -7,6 +7,7 @@ return {
       "vim",
       "vimdoc",
       "markdown",
+      "markdown_inline",
       "swift",
       "json",
     },
