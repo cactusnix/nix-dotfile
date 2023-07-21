@@ -13,6 +13,10 @@ opt.autoread = true
 opt.completeopt = { "menuone", "preview", "noselect" }
 opt.ignorecase = true
 opt.smartcase = true
+opt.undofile = true
+-- HACK workaround because type mismatch
+---@diagnostic disable-next-line: assign-type-mismatch
+opt.undodir = vim.fn.expand("$HOME/.local/share/nvim/undo")
 
 -- Line
 opt.number = true

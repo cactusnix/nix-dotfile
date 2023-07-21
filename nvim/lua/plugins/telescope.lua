@@ -5,6 +5,7 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
     },
+    "debugloop/telescope-undo.nvim",
   },
   opts = {
     extensions = {
@@ -14,6 +15,7 @@ return {
         override_file_sorter = true,
         case_mode = "smart_case",
       },
+      undo = {},
     },
   },
   config = function(_, opts)
@@ -64,5 +66,6 @@ return {
     local telescope = require("telescope")
     telescope.setup(opts)
     telescope.load_extension("fzf")
+    telescope.load_extension("undo")
   end,
 }
