@@ -44,10 +44,13 @@ return {
   config = function(_, opts)
     require("neodev").setup()
     local lsp_configs = require("lspconfig")
-    for _, it in ipairs(opts.languages) do
-      -- TODO use better way to do this
-      if lsp_configs[it["lsp"]] then
-        lsp_configs[it["lsp"]].setup(it["config"] and it["config"] or {})
+    local languages = opts.languages
+    for _, it in ipairs(languages) do
+      local lsp, config = it.lsp, it.config and it.config or {}
+      local success, _ =
+          pcall(require, "lspconfig.server_configurations." .. lsp)
+      if success then
+        vim.tbl_get(lsp_configs, lsp).setup(config)
       end
     end
     require("mason").setup(opts.mason)
