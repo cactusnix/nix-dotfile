@@ -42,9 +42,10 @@ return {
     },
   },
   config = function(_, opts)
+    local languages, mason_config = opts.languages, opts.mason
     require("neodev").setup()
+    require("mason").setup(mason_config)
     local lsp_configs = require("lspconfig")
-    local languages = opts.languages
     for _, it in ipairs(languages) do
       local lsp, config = it.lsp, it.config and it.config or {}
       local success, _ =
@@ -53,6 +54,5 @@ return {
         vim.tbl_get(lsp_configs, lsp).setup(config)
       end
     end
-    require("mason").setup(opts.mason)
   end,
 }
