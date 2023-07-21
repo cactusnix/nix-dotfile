@@ -3,6 +3,7 @@ return {
   main = "lualine",
   opts = {
     options = {
+      globalstatus = true,
       disabled_filetypes = {
         statusline = { "NvimTree" },
         winbar = {},
