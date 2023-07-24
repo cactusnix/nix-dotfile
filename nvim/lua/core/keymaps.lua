@@ -30,5 +30,21 @@ map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 -- Lazy
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
+-- Telescope
+map("n", "<leader>,", "<cmd>Telescope buffers<cr>", { desc = "Switch buffer" })
+map("n", "<leader>/", "<cmd>Telescope live_grep<cr>", { desc = "Find words" })
+map(
+  "n",
+  "<leader>:",
+  "<cmd>Telescope command_history<cr>",
+  { desc = "Find command history" }
+)
+map(
+  "n",
+  "<leader><space>",
+  "<cmd>Telescope find_files<cr>",
+  { desc = "Find files" }
+)
+
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
