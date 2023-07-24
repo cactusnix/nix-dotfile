@@ -6,6 +6,11 @@ return {
       "williamboman/mason.nvim",
       build = ":MasonUpdate",
     },
+    {
+      "glepnir/lspsaga.nvim",
+      event = "LspAttach",
+      config = true,
+    },
   },
   opts = {
     mason = {
