@@ -1,3 +1,5 @@
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 return {
   settings = {
     Lua = {
@@ -13,4 +15,5 @@ return {
       },
     },
   },
+  capabilities = capabilities,
 }
