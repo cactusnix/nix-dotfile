@@ -12,7 +12,7 @@ return {
     },
     "rafamadriz/friendly-snippets",
   },
-  event = "InsertEnter",
+  event = "VimEnter",
   config = function()
     local cmp = require("cmp")
     cmp.setup({

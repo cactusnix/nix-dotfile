@@ -1,3 +1,5 @@
+-- TODO: It will be removed because null ls will archived.
+
 local h = require("null-ls.helpers")
 local methods = require("null-ls.methods")
 
