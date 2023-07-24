@@ -8,6 +8,14 @@ return {
     "debugloop/telescope-undo.nvim",
   },
   opts = {
+    defaults = {
+      prompt_prefix = " ",
+    },
+    pickers = {
+      find_files = {
+        theme = "dropdown",
+      },
+    },
     extensions = {
       fzf = {
         fuzzy = true,
