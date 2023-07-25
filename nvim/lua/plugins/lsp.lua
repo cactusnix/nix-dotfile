@@ -1,3 +1,27 @@
+local mason_langs, custom_langs, other_packages =
+    {
+      {
+        name = "lua",
+        lsp = "lua_ls",
+        ensure_installed = { "lua-language-server", "stylua" },
+        config = require("lsp.lua"),
+      },
+      {
+        name = "json",
+        lsp = "jsonls",
+        ensure_installed = { "json-lsp" },
+      },
+    }, {
+      {
+        name = "swift",
+        lsp = "sourcekit",
+        -- server = "sourcekit-lsp",
+        -- format = "swift_format",
+        -- lint = "swiftlint",
+        config = require("lsp.swift"),
+      },
+    }, { "prettier" }
+
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -5,6 +29,32 @@ return {
     {
       "williamboman/mason.nvim",
       build = ":MasonUpdate",
+      cmd = "Mason",
+      opts = {
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗",
+          },
+        },
+      },
+      config = function(_, opts)
+        require("mason").setup(opts)
+        local mason_registry = require("mason-registry")
+        local function install_packages(packages)
+          for _, package_name in ipairs(packages) do
+            local package = mason_registry.get_package(package_name)
+            if not package:is_installed() then
+              package:install()
+            end
+          end
+        end
+        install_packages(other_packages)
+        for _, it in ipairs(mason_langs) do
+          install_packages(it.ensure_installed)
+        end
+      end,
     },
     {
       "glepnir/lspsaga.nvim",
@@ -12,41 +62,8 @@ return {
       config = true,
     },
   },
-  opts = {
-    mason = {
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    },
-    languages = {
-      {
-        name = "lua",
-        lsp = "lua_ls",
-        server = "lua-language-server",
-        format = "stylua",
-        config = require("lsp.lua"),
-      },
-      {
-        name = "swift",
-        lsp = "sourcekit",
-        server = "sourcekit-lsp",
-        format = "swift_format",
-        lint = "swiftlint",
-        config = require("lsp.swift"),
-      },
-      {
-        name = "json",
-        lsp = "jsonls",
-        server = "json-lsp",
-        format = "prettier",
-      },
-    },
-  },
-  config = function(_, opts)
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
     local icons = require("constants.icons")
     local diagnostic_signs = {
       {
@@ -72,17 +89,11 @@ return {
         { texthl = sign.name, text = sign.text, numhl = sign.name }
       )
     end
-    local languages, mason_config = opts.languages, opts.mason
     require("neodev").setup()
-    require("mason").setup(mason_config)
     local lsp_configs = require("lspconfig")
-    for _, it in ipairs(languages) do
+    for _, it in ipairs(mason_langs) do
       local lsp, config = it.lsp, it.config and it.config or {}
-      local success, _ =
-          pcall(require, "lspconfig.server_configurations." .. lsp)
-      if success then
-        vim.tbl_get(lsp_configs, lsp).setup(config)
-      end
+      vim.tbl_get(lsp_configs, lsp).setup(config)
     end
   end,
 }
