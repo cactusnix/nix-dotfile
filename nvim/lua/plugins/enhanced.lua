@@ -25,15 +25,13 @@ return {
     event = "VeryLazy",
     config = true,
   },
-  -- It can be replaced by nvim-autopairs that has more feature.
-  -- But now, I only need simple one.
   {
-    "echasnovski/mini.pairs",
+    "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = true,
   },
   {
-    "echasnovski/mini.comment",
+    "numToStr/Comment.nvim",
     event = "InsertEnter",
     config = true,
   },
@@ -48,5 +46,11 @@ return {
   {
     "norcalli/nvim-colorizer.lua",
     config = true,
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+    },
   },
 }
