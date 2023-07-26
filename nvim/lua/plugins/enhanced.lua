@@ -41,10 +41,12 @@ return {
   },
   {
     "folke/trouble.nvim",
+    event = "VeryLazy",
     config = true,
   },
   {
     "norcalli/nvim-colorizer.lua",
+    event = "VeryLazy",
     config = true,
   },
   {
