@@ -87,11 +87,28 @@ return {
         },
         center = {
           {
-            icon = "",
+            icon = "󰱼  ",
+            icon_hl = "Title",
             desc = "Find File                                    ",
-            key = "<leader> f f",
-            keymap = "<leader>ff",
-            action = "<leader>ff",
+            key = "SPC SPC",
+          },
+          {
+            icon = "󱘢  ",
+            icon_hl = "Title",
+            desc = "Find Word                                    ",
+            key = "SPC /",
+          },
+          {
+            icon = "󰙅  ",
+            icon_hl = "Title",
+            desc = "File Explorer                                ",
+            key = "SPC f e",
+          },
+          {
+            icon = "  ",
+            icon_hl = "Title",
+            desc = "Quit Neovim                                  ",
+            key = "SPC q q",
           },
         },
       },

@@ -53,4 +53,9 @@ return {
       "kevinhwang91/promise-async",
     },
   },
+  {
+    "max397574/better-escape.nvim",
+    event = "VeryLazy",
+    config = true,
+  },
 }
