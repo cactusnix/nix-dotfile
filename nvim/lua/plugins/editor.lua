@@ -113,5 +113,22 @@ return {
         },
       },
     },
+    config = function(_, opts)
+      local stats = require("lazy").stats()
+      local footer = {
+        "",
+        "",
+        "",
+        "󰔚 "
+        .. stats.startuptime
+        .. " / 󰏋 "
+        .. stats.loaded
+        .. " / 󱑥 "
+        .. stats.count,
+      }
+      require("dashboard").setup(
+        vim.tbl_deep_extend("force", opts, { config = { footer = footer } })
+      )
+    end,
   },
 }
