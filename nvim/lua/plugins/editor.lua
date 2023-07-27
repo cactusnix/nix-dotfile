@@ -1,5 +1,3 @@
-local icons = require("constants.icons")
-
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -10,7 +8,16 @@ return {
         desc = "Explorer Neotree",
       },
     },
-    config = true,
+    opts = {
+      window = {
+        mappings = {
+          ["<Tab>"] = {
+            "toggle_node",
+            nowait = false,
+          },
+        },
+      },
+    },
   },
   {
     "akinsho/bufferline.nvim",
