@@ -62,7 +62,7 @@ return {
       config = true,
     },
   },
-  event = { "BufReadPre", "BufNewFile" },
+  event = { "BufReadPre" },
   config = function()
     local icons = require("constants.icons")
     local diagnostic_signs = {

@@ -11,13 +11,13 @@ map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 
--- File Explorer
-map(
-  "n",
-  "<leader>fe",
-  "<cmd>NvimTreeToggle<cr>",
-  { desc = "Explorer NvimTree" }
-)
+-- Move Lines
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<A-j>", "<cmd>m '>+1<cr>gv=gv<cr>", { desc = "Move down" })
+map("v", "<A-k>", "<cmd>m '<-2<cr>gv=gv<cr>", { desc = "Move up" })
 
 -- Buffer
 map("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })

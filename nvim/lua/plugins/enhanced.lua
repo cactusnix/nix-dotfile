@@ -1,16 +1,18 @@
 return {
   {
     "folke/flash.nvim",
-    event = "VeryLazy",
+    event = "BufReadPre",
     config = true,
   },
   {
     "folke/which-key.nvim",
-    event = "VeryLazy",
+    ft = "NvimTree",
+    event = "BufReadPre",
     config = true,
   },
   {
     "folke/todo-comments.nvim",
+    event = "BufReadPre",
     config = true,
   },
   {
@@ -41,12 +43,19 @@ return {
   },
   {
     "folke/trouble.nvim",
-    event = "VeryLazy",
+    cmd = { "TroubleToggle" },
+    keys = {
+      {
+        "<leader>tt",
+        "<cmd>TroubleToggle<cr>",
+        desc = "Trouble Toggle",
+      },
+    },
     config = true,
   },
   {
     "norcalli/nvim-colorizer.lua",
-    event = "VeryLazy",
+    event = "BufReadPre",
     config = true,
   },
   {
@@ -57,7 +66,7 @@ return {
   },
   {
     "max397574/better-escape.nvim",
-    event = "VeryLazy",
+    event = "InsertEnter",
     config = true,
   },
 }

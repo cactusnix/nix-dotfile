@@ -1,6 +1,7 @@
 -- TODO: Remove null ls plugin due to it will be archived
 return {
   "jose-elias-alvarez/null-ls.nvim",
+  event = "LspAttach",
   config = function()
     local null_ls = require("null-ls")
     local on_attach = function(client, bufnr)

@@ -3,7 +3,14 @@ local icons = require("constants.icons")
 return {
   {
     "nvim-tree/nvim-tree.lua",
-    cmd = "NvimTreeToggle",
+    cmd = { "NvimTreeToggle" },
+    keys = {
+      {
+        "<leader>fe",
+        "<cmd>NvimTreeToggle<cr>",
+        desc = "Explorer NvimTree",
+      },
+    },
     opts = {
       disable_netrw = true,
       hijack_cursor = true,
@@ -30,6 +37,7 @@ return {
   },
   {
     "akinsho/bufferline.nvim",
+    event = "VimEnter",
     opts = {
       options = {
         diagnostics = "nvim_lsp",
@@ -46,6 +54,7 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
+    event = "VimEnter",
     opts = {
       options = {
         globalstatus = true,
