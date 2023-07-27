@@ -6,7 +6,6 @@ return {
   },
   {
     "folke/which-key.nvim",
-    ft = "NvimTree",
     event = "BufReadPre",
     config = true,
   },
@@ -43,7 +42,6 @@ return {
   },
   {
     "folke/trouble.nvim",
-    cmd = { "TroubleToggle" },
     keys = {
       {
         "<leader>tt",

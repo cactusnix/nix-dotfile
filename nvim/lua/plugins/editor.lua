@@ -2,38 +2,15 @@ local icons = require("constants.icons")
 
 return {
   {
-    "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle" },
+    "nvim-neo-tree/neo-tree.nvim",
     keys = {
       {
         "<leader>fe",
-        "<cmd>NvimTreeToggle<cr>",
-        desc = "Explorer NvimTree",
+        "<cmd>Neotree<cr>",
+        desc = "Explorer Neotree",
       },
     },
-    opts = {
-      disable_netrw = true,
-      hijack_cursor = true,
-      renderer = {
-        root_folder_label = false,
-        icons = {
-          git_placement = "after",
-        },
-      },
-      diagnostics = {
-        enable = true,
-        icons = {
-          hint = icons.diagnostics.hint,
-          info = icons.diagnostics.info,
-          warning = icons.diagnostics.warn,
-          error = icons.diagnostics.error,
-        },
-      },
-      git = {
-        enable = true,
-        show_on_dirs = false,
-      },
-    },
+    config = true,
   },
   {
     "akinsho/bufferline.nvim",
@@ -43,7 +20,7 @@ return {
         diagnostics = "nvim_lsp",
         offsets = {
           {
-            filetype = "NvimTree",
+            filetype = "neo-tree",
             text = "Explorer",
             highlight = "Directory",
             text_align = "center",
@@ -59,7 +36,7 @@ return {
       options = {
         globalstatus = true,
         disabled_filetypes = {
-          statusline = { "NvimTree", "dashboard" },
+          statusline = { "neo-tree", "dashboard" },
           winbar = {},
         },
       },
@@ -129,11 +106,11 @@ return {
         "",
         "",
         "󰔚 "
-        .. stats.startuptime
-        .. " / 󰏋 "
-        .. stats.loaded
-        .. " / 󱑥 "
-        .. stats.count,
+          .. stats.startuptime
+          .. " / 󰏋 "
+          .. stats.loaded
+          .. " / 󱑥 "
+          .. stats.count,
       }
       require("dashboard").setup(
         vim.tbl_deep_extend("force", opts, { config = { footer = footer } })
