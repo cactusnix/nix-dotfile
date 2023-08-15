@@ -41,6 +41,8 @@ return {
     event = "VimEnter",
     opts = {
       options = {
+        component_separators = "|",
+        section_separators = { left = "", right = "" },
         globalstatus = true,
         disabled_filetypes = {
           statusline = { "neo-tree", "dashboard" },
@@ -48,11 +50,31 @@ return {
         },
       },
       sections = {
-        lualine_a = { "mode" },
-        lualine_b = { "filename", "diff" },
+        lualine_a = {
+          {
+            "mode",
+            icon = "",
+            separator = {
+              left = "",
+            },
+            padding = {
+              right = 2,
+            },
+          },
+        },
         lualine_c = {},
         lualine_x = { "encoding" },
-        lualine_z = { "branch" },
+        lualine_z = {
+          {
+            "branch",
+            separator = {
+              right = "",
+            },
+            padding = {
+              left = 2,
+            },
+          },
+        },
       },
     },
     config = function(_, opts)
@@ -76,8 +98,20 @@ return {
           icon = " ",
         },
       }
+      local lualine_b = {
+        {
+          function()
+            local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+            local buf_fn = vim.fn.expand("%:t")
+            local file_icon =
+              require("nvim-web-devicons").get_icon_by_filetype(buf_ft)
+            return file_icon .. " " .. buf_fn
+          end,
+        },
+      }
       require("lualine").setup(vim.tbl_deep_extend("force", opts, {
         sections = {
+          lualine_b = lualine_b,
           lualine_y = lualine_y,
         },
       }))
