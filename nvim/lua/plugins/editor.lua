@@ -52,10 +52,36 @@ return {
         lualine_b = { "filename", "diff" },
         lualine_c = {},
         lualine_x = { "encoding" },
-        lualine_y = { "diagnostics" },
         lualine_z = { "branch" },
       },
     },
+    config = function(_, opts)
+      local lualine_y = {
+        {
+          function()
+            local msg = "No Active Lsp"
+            local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+            local clients = vim.lsp.get_active_clients()
+            if next(clients) == nil then
+              return msg
+            end
+            for _, client in ipairs(clients) do
+              local filetypes = client.config.filetypes
+              if filetypes and vim.tbl_contains(filetypes, buf_ft) then
+                return client.name
+              end
+            end
+            return msg
+          end,
+          icon = " ",
+        },
+      }
+      require("lualine").setup(vim.tbl_deep_extend("force", opts, {
+        sections = {
+          lualine_y = lualine_y,
+        },
+      }))
+    end,
   },
   {
     "glepnir/dashboard-nvim",
