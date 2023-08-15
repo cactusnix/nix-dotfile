@@ -1,26 +1,31 @@
 local mason_langs, custom_langs, other_packages =
+  {
     {
-      {
-        name = "lua",
-        lsp = "lua_ls",
-        ensure_installed = { "lua-language-server", "stylua" },
-        config = require("lsp.lua"),
-      },
-      {
-        name = "json",
-        lsp = "jsonls",
-        ensure_installed = { "json-lsp" },
-      },
-    }, {
-      {
-        name = "swift",
-        lsp = "sourcekit",
-        -- server = "sourcekit-lsp",
-        -- format = "swift_format",
-        -- lint = "swiftlint",
-        config = require("lsp.swift"),
-      },
-    }, { "prettier" }
+      name = "lua",
+      lsp = "lua_ls",
+      ensure_installed = { "lua-language-server", "stylua" },
+      config = require("lsp.lua"),
+    },
+    {
+      name = "json",
+      lsp = "jsonls",
+      ensure_installed = { "json-lsp" },
+    },
+    {
+      name = "toml",
+      lsp = "taplo",
+      ensure_installed = { "taplo" },
+    },
+  }, {
+    {
+      name = "swift",
+      lsp = "sourcekit",
+      -- server = "sourcekit-lsp",
+      -- format = "swift_format",
+      -- lint = "swiftlint",
+      config = require("lsp.swift"),
+    },
+  }, { "prettier" }
 
 return {
   "neovim/nvim-lspconfig",
