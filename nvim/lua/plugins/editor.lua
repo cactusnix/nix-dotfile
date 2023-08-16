@@ -101,6 +101,17 @@ return {
             return msg
           end,
           icon = " ",
+          cond = function()
+            local disabled_filetypes =
+              { "neo-tree", "dashboard", "TelescopePrompt" }
+            return not vim.tbl_contains(
+              disabled_filetypes,
+              vim.api.nvim_buf_get_option(0, "filetype")
+            )
+          end,
+          on_click = function()
+            vim.cmd([[LspInfo]])
+          end,
         },
       }
       local lualine_b = {
