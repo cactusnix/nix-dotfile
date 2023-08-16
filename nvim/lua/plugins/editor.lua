@@ -62,7 +62,6 @@ return {
             },
           },
         },
-        lualine_c = {},
         lualine_x = { "encoding" },
         lualine_z = {
           {
@@ -125,9 +124,21 @@ return {
           end,
         },
       }
+      local diff = require("constants.icons").diff
+      local lualine_c = {
+        {
+          "diff",
+          symbols = {
+            added = diff.added,
+            modified = diff.modified,
+            removed = diff.removed,
+          },
+        },
+      }
       require("lualine").setup(vim.tbl_deep_extend("force", opts, {
         sections = {
           lualine_b = lualine_b,
+          lualine_c = lualine_c,
           lualine_y = lualine_y,
         },
       }))

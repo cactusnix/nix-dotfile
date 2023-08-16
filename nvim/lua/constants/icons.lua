@@ -7,4 +7,12 @@ M.diagnostics = {
   error = "󰅙",
 }
 
+M.diff = {
+  added = " ",
+  ignored = " ",
+  modified = " ",
+  removed = " ",
+  renamed = " ",
+}
+
 return M
