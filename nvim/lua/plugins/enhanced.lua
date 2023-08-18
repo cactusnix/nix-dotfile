@@ -67,4 +67,7 @@ return {
     event = "InsertEnter",
     config = true,
   },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+  },
 }
