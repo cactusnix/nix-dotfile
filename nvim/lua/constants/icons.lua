@@ -1,10 +1,10 @@
 local M = {}
 
 M.diagnostics = {
-  hint = "",
-  info = "",
-  warn = "",
-  error = "󰅙",
+  hint = " ",
+  info = " ",
+  warn = " ",
+  error = "󰅙 ",
 }
 
 M.diff = {
