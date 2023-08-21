@@ -11,11 +11,31 @@ return {
       build = "make install_jsregexp",
     },
     "rafamadriz/friendly-snippets",
+    "onsails/lspkind.nvim",
   },
   event = { "InsertEnter", "CmdlineEnter" },
   config = function()
     local cmp = require("cmp")
+    local lspkind = require("lspkind")
     cmp.setup({
+      formatting = {
+        format = lspkind.cmp_format({
+          mode = "symbol_text",
+          menu = {
+            buffer = "[Buffer]",
+            nvim_lsp = "[LSP]",
+            luasnip = "[LuaSnip]",
+            path = "[Path]",
+          },
+          maxwidth = 100,
+          ellipsis_char = "...",
+        }),
+      },
+      view = {
+        docs = {
+          auto_open = true,
+        },
+      },
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
@@ -51,20 +71,6 @@ return {
       experimental = {
         ghost_text = true,
       },
-    })
-    -- Search Cmp
-    cmp.setup.cmdline({ "/", "?" }, {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = {
-        { name = "buffer" },
-      },
-    })
-    -- Cmd Cmp
-    cmp.setup.cmdline(":", {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = cmp.config.sources({
-        { name = "path", name = "cmdline" },
-      }),
     })
   end,
 }
