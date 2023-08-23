@@ -14,8 +14,8 @@ map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 -- Move Lines
 map("n", "<S-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
 map("n", "<S-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
-map("i", "<S-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
-map("i", "<S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 
 -- Buffer
 map("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
