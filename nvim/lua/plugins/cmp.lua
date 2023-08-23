@@ -20,6 +20,9 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
     local cmp = require("cmp")
     local lspkind = require("lspkind")
+    local window_bordered_opts = cmp.config.window.bordered({
+      scrollbar = false,
+    })
     cmp.setup({
       enabled = function()
         local context = require("cmp.config.context")
@@ -51,8 +54,8 @@ return {
         },
       },
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = window_bordered_opts,
+        documentation = window_bordered_opts,
       },
       snippet = {
         expand = function(args)
@@ -61,20 +64,12 @@ return {
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-n>"] = cmp.mapping.select_next_item({
-          behavior = cmp.SelectBehavior.Insert,
+          behavior = cmp.SelectBehavior.Select,
         }),
         ["<C-p>"] = cmp.mapping.select_prev_item({
-          behavior = cmp.SelectBehavior.Insert,
+          behavior = cmp.SelectBehavior.Select,
         }),
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-e>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<S-CR>"] = cmp.mapping.confirm({
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = true,
-        }),
       }),
       sources = {
         { name = "nvim_lsp" },
