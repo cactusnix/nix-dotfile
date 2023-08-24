@@ -7,6 +7,7 @@ return {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
+    "hrsh7th/cmp-calc",
     "saadparwaiz1/cmp_luasnip",
     {
       "L3MON4D3/LuaSnip",
@@ -45,6 +46,7 @@ return {
             nvim_lsp = "[LSP]",
             luasnip = "[LuaSnip]",
             path = "[Path]",
+            calc = "[Calc]",
           },
           maxwidth = 100,
           ellipsis_char = "...",
@@ -75,6 +77,7 @@ return {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
+        { name = "calc" },
       },
       experimental = {
         ghost_text = true,

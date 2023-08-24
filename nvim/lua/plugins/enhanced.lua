@@ -51,6 +51,7 @@ return {
     },
     config = true,
   },
+  -- Display real-time color plugin
   {
     "norcalli/nvim-colorizer.lua",
     event = "BufReadPre",
@@ -69,5 +70,11 @@ return {
   },
   {
     "HiPhish/rainbow-delimiters.nvim",
+  },
+  -- Surround enhanced plugin
+  {
+    "kylechui/nvim-surround",
+    event = "InsertEnter",
+    config = true,
   },
 }
