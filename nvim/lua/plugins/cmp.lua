@@ -23,6 +23,9 @@ return {
     local window_bordered_opts = cmp.config.window.bordered({
       scrollbar = false,
     })
+    local select_opts = {
+      behavior = cmp.SelectBehavior.Select,
+    }
     cmp.setup({
       enabled = function()
         local context = require("cmp.config.context")
@@ -63,12 +66,8 @@ return {
         end,
       },
       mapping = cmp.mapping.preset.insert({
-        ["<C-n>"] = cmp.mapping.select_next_item({
-          behavior = cmp.SelectBehavior.Select,
-        }),
-        ["<C-p>"] = cmp.mapping.select_prev_item({
-          behavior = cmp.SelectBehavior.Select,
-        }),
+        ["<C-n>"] = cmp.mapping.select_next_item(select_opts),
+        ["<C-p>"] = cmp.mapping.select_prev_item(select_opts),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
       }),
       sources = {
