@@ -1,5 +1,4 @@
 return {
-  "folke/tokyonight.nvim",
+  "cactusnix/nix.nvim",
   lazy = false,
-  priority = 1000,
 }
