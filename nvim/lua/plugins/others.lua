@@ -16,7 +16,7 @@ return {
   -- The plugin makes start screen beautiful.
   {
     "nvimdev/dashboard-nvim",
-    event = "VimEnter",
+    lazy = false,
   },
   -- The plugin can show keybindings better.
   {
@@ -29,5 +29,11 @@ return {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = true,
-  }
+  },
+  -- The plugin show nice status line.
+  {
+    "nvim-lualine/lualine.nvim",
+    lazy = false,
+    config = true,
+  },
 }
