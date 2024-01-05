@@ -36,4 +36,10 @@ return {
     lazy = false,
     config = true,
   },
+  -- The plugin make motion nice.
+  {
+    "folke/flash.nvim",
+    lazy = false,
+    config = true,
+  },
 }
