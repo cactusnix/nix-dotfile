@@ -24,4 +24,10 @@ return {
     lazy = false,
     config = true,
   },
+  -- The plugin can auto pair.
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true,
+  }
 }
