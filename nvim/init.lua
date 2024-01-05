@@ -1,4 +1,5 @@
 -- Settings.
+require("settings/general")
 require("settings/keybindings")
 -- Lazy plugin load.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
