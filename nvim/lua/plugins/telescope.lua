@@ -4,27 +4,24 @@ return {
     keys = {
       {
         "<leader>,",
-        "<cmd>Telescope buffers<cr>",
+        "<CMD>Telescope buffers<CR>",
         desc = "Switch buffer",
       },
       {
         "<leader>/",
-        "<cmd>Telescope live_grep<cr>",
+        "<CMD>Telescope live_grep<CR>",
         desc = "Find words",
       },
       {
         "<leader>:",
-        "<cmd>Telescope command_history<cr>",
+        "<CMD>Telescope command_history<CR>",
         desc = "Find command history",
       },
       {
         "<leader><space>",
-        "<cmd>Telescope find_files<cr>",
+        "<CMD>Telescope find_files<CR>",
         desc = "Find files",
       },
     },
-    config = function()
-      require("telescope").setup()
-    end
   },
 }
