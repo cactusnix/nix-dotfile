@@ -2,6 +2,9 @@ return {
   -- The plugin can setup lsp and lazy start server.
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "folke/neodev.nvim",
+    },
     event = "BufReadPre",
     opts = {
       servers = {
@@ -9,6 +12,7 @@ return {
       },
     },
     config = function(_, opts)
+      require("neodev").setup()
       for _, server in ipairs(opts.servers) do
         require("lspconfig")[server].setup({})
         -- Watch lsp attach event to set keymap.
