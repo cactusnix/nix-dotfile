@@ -2,4 +2,6 @@
 
 ### Plugins
 
-1. nvim-web-devicons
+### Supported Languages
+
+- Lua (LSP: lua-language-server by Homebrew, Formatter: stylua by Homebrew)
