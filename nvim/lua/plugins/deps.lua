@@ -7,4 +7,22 @@ return {
   {
     "nvim-lua/plenary.nvim",
   },
+  -- The plugin makes other plugins better.
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = "BufReadPre",
+    cmd = { "TSInstall", "TSUpdate" },
+    opts = {
+      ensure_installed = {
+        "json",
+        "lua",
+        "markdown",
+        "markdown_inline",
+      },
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+    end,
+  },
 }

@@ -4,15 +4,23 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "folke/neodev.nvim",
+      -- The plugin will show lsp process.
+      "j-hui/fidget.nvim",
+      -- The plugin make lsp experience better.
+      "nvimdev/lspsaga.nvim",
     },
     event = "BufReadPre",
     opts = {
       servers = {
         "lua_ls",
       },
+      fidget = {},
+      lspsaga = {},
     },
     config = function(_, opts)
+      require("fidget").setup(opts.fidget)
       require("neodev").setup()
+      require("lspsaga").setup(opts.lspsaga)
       for _, server in ipairs(opts.servers) do
         require("lspconfig")[server].setup({})
         -- Watch lsp attach event to set keymap.
@@ -25,7 +33,12 @@ return {
               "<CMD>LspInfo<CR>",
               { desc = "[C]urrent [L]sp info" }
             )
-            keymap_set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
+            keymap_set(
+              "n",
+              "K",
+              "<CMD>Lspsaga hover_doc<CR>",
+              { desc = "Hover Documentation" }
+            )
           end,
         })
       end
