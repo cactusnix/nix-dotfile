@@ -75,6 +75,12 @@ return {
               "<CMD>Lspsaga code_action<CR>",
               { desc = "[c]ode [a]ction" }
             )
+            keymap_set(
+              "n",
+              "<leader>cr",
+              "<CMD>Lspsaga rename<CR>",
+              { desc = "[c]ode [r]ename" }
+            )
           end,
         })
       end
