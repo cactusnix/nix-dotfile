@@ -33,7 +33,7 @@ return {
   -- The plugin show nice status line.
   {
     "nvim-lualine/lualine.nvim",
-    lazy = false,
+    event = "VeryLazy",
     config = true,
   },
   -- The plugin make motion nice.

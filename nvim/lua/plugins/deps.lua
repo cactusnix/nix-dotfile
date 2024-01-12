@@ -11,14 +11,21 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    event = "BufReadPre",
-    cmd = { "TSInstall", "TSUpdate" },
+    event = "VeryLazy",
     opts = {
       ensure_installed = {
         "json",
         "lua",
         "markdown",
         "markdown_inline",
+      },
+      -- This is an experimental feature.
+      indent = {
+        enable = true,
+      },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
       },
     },
     config = function(_, opts)
