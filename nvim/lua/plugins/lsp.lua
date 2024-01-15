@@ -22,7 +22,10 @@ return {
       require("neodev").setup()
       require("lspsaga").setup(opts.lspsaga)
       for _, server in ipairs(opts.servers) do
-        require("lspconfig")[server].setup({})
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        require("lspconfig")[server].setup({
+          capabilities = capabilities,
+        })
         -- Watch lsp attach event to set keymap.
         vim.api.nvim_create_autocmd("LspAttach", {
           callback = function()
