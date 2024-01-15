@@ -54,4 +54,32 @@ return {
     "dstein64/vim-startuptime",
     cmd = "StartupTime",
   },
+  -- The plugin make buffer better.
+  {
+    "akinsho/bufferline.nvim",
+    event = "VeryLazy",
+    keys = {
+      { "<leader>bp", "<CMD>BufferLineTogglePin<CR>", desc = "[b]uffer [p]in" },
+      {
+        "<leader>bo",
+        "<Cmd>BufferLineCloseOthers<CR>",
+        desc = "[b]uffer close [o]ther",
+      },
+      {
+        "<leader>br",
+        "<CMD>BufferLineCloseRight<CR>",
+        desc = "[b]uffer close to [r]ight",
+      },
+      {
+        "<leader>bl",
+        "<CMD>BufferLineCloseLeft<CR>",
+        desc = "[b]uffer close to [l]eft",
+      },
+      { "<S-h>", "<CMD>BufferLineCyclePrev<CR>", desc = "Prev buffer" },
+      { "<S-l>", "<CMD>BufferLineCycleNext<CR>", desc = "Next buffer" },
+      { "[b", "<CMD>BufferLineCyclePrev<CR>", desc = "Prev buffer" },
+      { "]b", "<CMD>BufferLineCycleNext<CR>", desc = "Next buffer" },
+    },
+    config = true,
+  },
 }
