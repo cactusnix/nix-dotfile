@@ -30,9 +30,11 @@ return {
           ["C-b"] = cmp.mapping.scroll_docs(-4),
           ["C-f"] = cmp.mapping.scroll_docs(4),
           ["C-e"] = cmp.mapping.abort(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
+          { name = "luasnip" },
           { name = "path" },
         }, {
           { name = "buffer" },
@@ -46,5 +48,33 @@ return {
   -- The plugin is cmp engine.
   {
     "L3MON4D3/LuaSnip",
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+      config = function()
+        require("luasnip.loaders.from_vscode").lazy_load()
+      end,
+    },
+    keys = {
+      {
+        "<Tab>",
+        function()
+          local luasnip = require("luasnip")
+          if luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
+          end
+        end,
+        mode = { "i", "s" },
+      },
+      {
+        "<S-Tab>",
+        function()
+          local luasnip = require("luasnip")
+          if luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+          end
+        end,
+        mode = { "i", "s" },
+      },
+    },
   },
 }
