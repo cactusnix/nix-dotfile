@@ -44,8 +44,8 @@ return {
   },
   -- The plugin show indent blankline.
   {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
+    "echasnovski/mini.indentscope",
+    version = false,
     event = "BufRead",
     config = true,
   },

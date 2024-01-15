@@ -1,7 +1,7 @@
 return {
   {
     "hrsh7th/nvim-cmp",
-    version = fasle, -- For repo because last release is way too old.
+    version = false, -- For repo because last release is way too old.
     dependencies = {
       "saadparwaiz1/cmp_luasnip", -- Bridge for LuaSnip
       "hrsh7th/cmp-buffer",
