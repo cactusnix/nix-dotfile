@@ -42,4 +42,16 @@ return {
     lazy = false,
     config = true,
   },
+  -- The plugin show indent blankline.
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    event = "BufRead",
+    config = true,
+  },
+  -- The plugin measure startup time, it uses vim script so maybe not need config = true.
+  {
+    "dstein64/vim-startuptime",
+    cmd = "StartupTime",
+  },
 }
