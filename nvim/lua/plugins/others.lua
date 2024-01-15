@@ -89,4 +89,14 @@ return {
     event = "VeryLazy",
     config = true,
   },
+  -- The plugin make neovim more nice.
+  {
+    "folke/noice.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+    event = "VeryLazy",
+    config = true,
+  },
 }
