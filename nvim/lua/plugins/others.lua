@@ -99,4 +99,20 @@ return {
     event = "VeryLazy",
     config = true,
   },
+  -- The plugin is just for fun.
+  {
+    "eandrju/cellular-automaton.nvim",
+    keys = {
+      {
+        "<leader>mr",
+        "<CMD>CellularAutomaton make_it_rain<CR>",
+        desc = "[m]ake code [r]ain",
+      },
+      {
+        "<leader>mg",
+        "<CMD>CellularAutomaton game_of_life<CR>",
+        desc = "[m]ake code [g]ame",
+      },
+    },
+  },
 }
