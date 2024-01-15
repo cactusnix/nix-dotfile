@@ -82,4 +82,11 @@ return {
     },
     config = true,
   },
+  -- The plugin make ui animate better.
+  {
+    "echasnovski/mini.animate",
+    version = false,
+    event = "VeryLazy",
+    config = true,
+  },
 }
