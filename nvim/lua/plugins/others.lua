@@ -93,7 +93,11 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    config = true,
+    opts = {
+      options = {
+        disabled_filetypes = { "dashboard" },
+      },
+    },
   },
   -- The plugin make motion nice.
   {
@@ -116,7 +120,8 @@ return {
   -- The plugin make buffer better.
   {
     "akinsho/bufferline.nvim",
-    event = "BufAdd",
+    lazy = false,
+    event = "VeryLazy",
     keys = {
       { "<leader>bp", "<CMD>BufferLineTogglePin<CR>", desc = "[b]uffer [p]in" },
       {
