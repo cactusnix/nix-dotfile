@@ -3,24 +3,24 @@ return {
     "nvim-telescope/telescope.nvim",
     keys = {
       {
-        "<leader>,",
+        "<leader>fb",
         "<CMD>Telescope buffers<CR>",
-        desc = "Switch buffer",
+        desc = "[f]ind [b]uffers",
       },
       {
-        "<leader>/",
+        "<leader>fw",
         "<CMD>Telescope live_grep<CR>",
-        desc = "Find words",
+        desc = "[f]ind [w]ords",
       },
       {
-        "<leader>:",
-        "<CMD>Telescope command_history<CR>",
-        desc = "Find command history",
+        "<leader>fr",
+        "<CMD>Telescope oldfiles<CR>",
+        desc = "[f]ind [r]ecent files",
       },
       {
-        "<leader><space>",
+        "<leader>ff",
         "<CMD>Telescope find_files<CR>",
-        desc = "Find files",
+        desc = "[f]ind [f]iles",
       },
     },
   },

@@ -16,6 +16,47 @@ return {
   -- The plugin makes start screen beautiful.
   {
     "nvimdev/dashboard-nvim",
+    opts = function()
+      return {
+        theme = "doom",
+        config = {
+          center = {
+            {
+              action = "Telescope find_files",
+              desc = " Find file",
+              icon = " ",
+              key = "SPC f f",
+            },
+            {
+              action = "Telescope oldfiles",
+              desc = " Find recent files",
+              icon = " ",
+              key = "SPC f r",
+            },
+            {
+              action = "Telescope live_grep",
+              desc = " Find words",
+              icon = " ",
+              key = "SPC f w",
+            },
+            { action = "qa", desc = " Quit", icon = " ", key = "q" },
+          },
+          footer = function()
+            local stats = require("lazy").stats()
+            local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+            return {
+              "⚡ Neovim loaded "
+                .. stats.loaded
+                .. "/"
+                .. stats.count
+                .. " plugins in "
+                .. ms
+                .. "ms",
+            }
+          end,
+        },
+      }
+    end,
     lazy = false,
   },
   -- The plugin can show keybindings better.
