@@ -17,9 +17,23 @@ return {
   {
     "nvimdev/dashboard-nvim",
     opts = function()
+      local logo = [[
+       ▄████▄   ▄▄▄       ▄████▄  ▄▄▄█████▓ █    ██   ██████  ███▄    █  ██▓▒██   ██▒
+      ▒██▀ ▀█  ▒████▄    ▒██▀ ▀█  ▓  ██▒ ▓▒ ██  ▓██▒▒██    ▒  ██ ▀█   █ ▓██▒▒▒ █ █ ▒░
+      ▒▓█    ▄ ▒██  ▀█▄  ▒▓█    ▄ ▒ ▓██░ ▒░▓██  ▒██░░ ▓██▄   ▓██  ▀█ ██▒▒██▒░░  █   ░
+      ▒▓▓▄ ▄██▒░██▄▄▄▄██ ▒▓▓▄ ▄██▒░ ▓██▓ ░ ▓▓█  ░██░  ▒   ██▒▓██▒  ▐▌██▒░██░ ░ █ █ ▒ 
+      ▒ ▓███▀ ░ ▓█   ▓██▒▒ ▓███▀ ░  ▒██▒ ░ ▒▒█████▓ ▒██████▒▒▒██░   ▓██░░██░▒██▒ ▒██▒
+      ░ ░▒ ▒  ░ ▒▒   ▓▒█░░ ░▒ ▒  ░  ▒ ░░   ░▒▓▒ ▒ ▒ ▒ ▒▓▒ ▒ ░░ ▒░   ▒ ▒ ░▓  ▒▒ ░ ░▓ ░
+      ░  ▒     ▒   ▒▒ ░  ░  ▒       ░    ░░▒░ ░ ░ ░ ░▒  ░ ░░ ░░   ░ ▒░ ▒ ░░░   ░▒ ░
+      ░          ░   ▒   ░          ░       ░░░ ░ ░ ░  ░  ░     ░   ░ ░  ▒ ░ ░    ░  
+      ░ ░            ░  ░░ ░                  ░           ░           ░  ░   ░    ░  
+      ░                  ░
+      ]]
+      logo = "\n\n" .. logo .. "\n\n"
       return {
         theme = "doom",
         config = {
+          header = vim.split(logo, "\n"),
           center = {
             {
               action = "Telescope find_files",
@@ -45,6 +59,8 @@ return {
             local stats = require("lazy").stats()
             local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
             return {
+              "",
+              "",
               "⚡ Neovim loaded "
                 .. stats.loaded
                 .. "/"
@@ -52,6 +68,8 @@ return {
                 .. " plugins in "
                 .. ms
                 .. "ms",
+              "",
+              "",
             }
           end,
         },
@@ -98,7 +116,7 @@ return {
   -- The plugin make buffer better.
   {
     "akinsho/bufferline.nvim",
-    event = "VeryLazy",
+    event = "BufAdd",
     keys = {
       { "<leader>bp", "<CMD>BufferLineTogglePin<CR>", desc = "[b]uffer [p]in" },
       {
