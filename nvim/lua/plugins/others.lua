@@ -283,4 +283,11 @@ return {
     event = "BufRead",
     config = true,
   },
+  -- The plugin is theme plugin. I will replace it later with my own theme plguin.
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000, -- Load it first.
+    config = true,
+  },
 }
