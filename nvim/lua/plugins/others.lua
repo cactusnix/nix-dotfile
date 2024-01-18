@@ -277,4 +277,10 @@ return {
       },
     },
   },
+  -- The plugin show better git signs.
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "BufRead",
+    config = true,
+  },
 }
