@@ -97,12 +97,79 @@ return {
       options = {
         globalstatus = true,
         disabled_filetypes = { "dashboard" },
+        section_separators = "",
+        component_separators = "",
       },
       sections = {
-        lualine_a = { "mode" },
-        lualine_b = { "branch" },
+        lualine_a = {
+          {
+            "mode",
+            icon = require("constants.icons").neovim,
+          },
+        },
+        lualine_b = {
+          {
+            "filetype",
+            icon_only = true,
+            padding = {
+              left = 1,
+              right = 0,
+            },
+          },
+          {
+            "filename",
+            file_status = true,
+          },
+        },
+        lualine_c = {
+          {
+            "branch",
+            icon = require("constants.icons").source,
+          },
+          {
+            "diff",
+            symbols = {
+              added = require("constants.icons").added .. " ",
+              modified = require("constants.icons").modified .. " ",
+              removed = require("constants.icons").removed .. " ",
+            },
+          },
+        },
         lualine_x = {
-          { "diff" },
+          {
+            "diagnostics",
+            symbols = {
+              error = require("constants.icons").close .. " ",
+              warn = require("constants.icons").warning .. " ",
+              info = require("constants.icons").info .. " ",
+              hint = require("constants.icons").lightbulb .. " ",
+            },
+          },
+          {
+            function()
+              local clients = vim.lsp.get_active_clients({
+                bufnr = 0,
+              })
+              local component = ""
+              for i, v in ipairs(clients) do
+                component = component .. vim.tbl_get(v, "name")
+                -- Sometimes may has more than one lsp server.
+                if i ~= #clients then
+                  component = component .. "/"
+                end
+              end
+              return require("constants.icons").gear .. " " .. component
+            end,
+            cond = function()
+              local clients = vim.lsp.get_active_clients({
+                bufnr = 0,
+              })
+              return #clients > 0
+            end,
+            on_click = function()
+              vim.cmd("LspInfo")
+            end,
+          },
         },
         lualine_y = {
           {
@@ -116,11 +183,14 @@ return {
                   component = component .. "/"
                 end
               end
-              return require("constants.icons").check .. component
+              return require("constants.icons").check .. " " .. component
             end,
             cond = function()
               local formatters = require("conform").list_formatters()
               return #formatters > 0
+            end,
+            on_click = function()
+              require("conform").format({ async = true, lsp_fallback = true })
             end,
           },
         },

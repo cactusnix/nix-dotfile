@@ -16,6 +16,7 @@ return {
       ensure_installed = {
         "json",
         "lua",
+        "luadoc",
         "markdown",
         "markdown_inline",
         "rust",
