@@ -95,7 +95,35 @@ return {
     event = "VeryLazy",
     opts = {
       options = {
+        globalstatus = true,
         disabled_filetypes = { "dashboard" },
+      },
+      sections = {
+        lualine_a = { "mode" },
+        lualine_b = { "branch" },
+        lualine_x = {
+          { "diff" },
+        },
+        lualine_y = {
+          {
+            function()
+              local formatters = require("conform").list_formatters()
+              local component = ""
+              for i, v in ipairs(formatters) do
+                component = component .. vim.tbl_get(v, "name")
+                -- Sometimes may has more than one formatter.
+                if i ~= #formatters then
+                  component = component .. "/"
+                end
+              end
+              return require("constants.icons").check .. component
+            end,
+            cond = function()
+              local formatters = require("conform").list_formatters()
+              return #formatters > 0
+            end,
+          },
+        },
       },
     },
   },
