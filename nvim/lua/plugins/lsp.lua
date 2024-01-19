@@ -13,6 +13,7 @@ return {
     opts = {
       servers = {
         "lua_ls",
+        "sourcekit",
       },
       fidget = {},
       lspsaga = {},

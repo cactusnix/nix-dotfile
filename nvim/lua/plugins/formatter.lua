@@ -15,6 +15,7 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { "stylua" },
+        swift = { "swift_format" },
       },
       format_on_save = {
         lsp_fallback = true, -- Use lsp format as fallback.
