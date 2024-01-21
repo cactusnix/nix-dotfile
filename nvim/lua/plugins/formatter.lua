@@ -14,12 +14,15 @@ return {
     },
     opts = {
       formatters_by_ft = {
-        lua = { "stylua" },
+        lua = { "lua_fmt" },
         swift = { "swift_format" },
       },
       format_on_save = {
         lsp_fallback = true, -- Use lsp format as fallback.
         timeout_ms = 500,
+      },
+      formatters = {
+        lua_fmt = require("langs.formatters.stylua"),
       },
     },
     config = function(_, opts)
