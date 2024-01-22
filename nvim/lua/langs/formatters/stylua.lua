@@ -1,4 +1,4 @@
-local get_config_by_lang = require("utils").get_config_by_lang
+local utils = require("utils")
 
 return {
   meta = {
@@ -6,11 +6,20 @@ return {
     description = "An opinionated code formatter for Lua.",
   },
   command = "stylua",
-  args = {
-    "--config-path",
-    get_config_by_lang("lua", "fmt"),
-    "--stdin-filepath",
-    "$FILENAME",
-    "-",
-  },
+  args = function(ctx)
+    local config = utils.get_config_by_files({
+      ".stylua.toml",
+      "stylua.toml",
+    }, ctx)
+    if config == nil then
+      config = utils.get_config_by_lang("lua", "fmt")
+    end
+    return {
+      "--config-path",
+      config,
+      "--stdin-filepath",
+      "$FILENAME",
+      "-",
+    }
+  end,
 }
