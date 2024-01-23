@@ -207,7 +207,7 @@ return {
   {
     "echasnovski/mini.indentscope",
     version = false,
-    event = "BufRead",
+    event = "BufReadPost",
     config = true,
   },
   -- The plugin measure startup time, it uses vim script so maybe not need config = true.
@@ -280,7 +280,7 @@ return {
   -- The plugin show better git signs.
   {
     "lewis6991/gitsigns.nvim",
-    event = "BufRead",
+    event = "BufReadPost",
     config = true,
   },
   -- The plugin is theme plugin. I will replace it later with my own theme plguin.

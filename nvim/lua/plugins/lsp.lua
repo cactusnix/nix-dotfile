@@ -9,7 +9,7 @@ return {
       -- The plugin make lsp experience better.
       "nvimdev/lspsaga.nvim",
     },
-    event = "BufReadPre",
+    event = "BufReadPost",
     opts = {
       servers = {
         "lua_ls",
