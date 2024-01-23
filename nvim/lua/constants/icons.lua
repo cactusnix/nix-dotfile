@@ -14,5 +14,6 @@ M.ignored = ""
 M.modified = ""
 M.removed = ""
 M.renamed = ""
+M.flash = ""
 
 return M

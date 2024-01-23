@@ -193,6 +193,23 @@ return {
               require("conform").format({ async = true, lsp_fallback = true })
             end,
           },
+          {
+            function()
+              local ft = vim.bo.filetype
+              local linters = require("lint")._resolve_linter_by_ft(ft)
+              return require("constants.icons").flash
+                .. " "
+                .. table.concat(linters, "/")
+            end,
+            cond = function()
+              local ft = vim.bo.filetype
+              local linters = require("lint")._resolve_linter_by_ft(ft)
+              return #linters > 0
+            end,
+            on_click = function()
+              require("lint").try_lint()
+            end,
+          },
         },
       },
     },
