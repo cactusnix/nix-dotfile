@@ -15,6 +15,12 @@ return {
         "lua_ls",
         "sourcekit",
       },
+      signs = {
+        Error = require("constants.icons").close,
+        Warn = require("constants.icons").warning,
+        Hint = require("constants.icons").lightbulb,
+        Info = require("constants.icons").info,
+      },
       fidget = {},
       lspsaga = {},
     },
@@ -22,6 +28,13 @@ return {
       require("fidget").setup(opts.fidget)
       require("neodev").setup()
       require("lspsaga").setup(opts.lspsaga)
+      for name, icon in pairs(opts.signs) do
+        name = "DiagnosticSign" .. name
+        vim.fn.sign_define(
+          name,
+          { text = icon, texthl = name, linehl = "", numhl = name }
+        )
+      end
       -- Watch lsp attach event to set keymap.
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function()
