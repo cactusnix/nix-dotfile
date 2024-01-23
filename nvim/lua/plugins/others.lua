@@ -290,4 +290,11 @@ return {
     priority = 1000, -- Load it first.
     config = true,
   },
+  -- The plugin make comments better.
+  {
+    "echasnovski/mini.comment",
+    version = false,
+    event = "BufReadPost",
+    config = true,
+  },
 }
