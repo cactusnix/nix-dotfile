@@ -16,6 +16,7 @@ return {
   -- The plugin makes start screen beautiful.
   {
     "nvimdev/dashboard-nvim",
+    event = "VimEnter",
     opts = function()
       local logo = [[
        ▄████▄   ▄▄▄       ▄████▄  ▄▄▄█████▓ █    ██   ██████  ███▄    █  ██▓▒██   ██▒
@@ -75,7 +76,9 @@ return {
         },
       }
     end,
-    lazy = false,
+    config = function(_, opts)
+      require("dashboard").setup(opts)
+    end,
   },
   -- The plugin can show keybindings better.
   {
