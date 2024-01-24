@@ -3,6 +3,11 @@ return {
     "nvim-telescope/telescope.nvim",
     keys = {
       {
+        "<leader><Space>",
+        "<CMD>Telescope find_files<CR>",
+        desc = "find files",
+      },
+      {
         "<leader>fb",
         "<CMD>Telescope buffers<CR>",
         desc = "[f]ind [b]uffers",

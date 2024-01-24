@@ -39,7 +39,7 @@ return {
               action = "Telescope find_files",
               desc = " Find file",
               icon = " ",
-              key = "SPC f f",
+              key = "SPC SPC",
             },
             {
               action = "Telescope oldfiles",
