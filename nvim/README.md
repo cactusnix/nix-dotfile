@@ -9,3 +9,7 @@
 ### Bugs
 
 - [ ] lint not execute when buf read.
+
+### TODO
+
+- [ ] lsp config custom only for myself, so that I can really understand all config.
