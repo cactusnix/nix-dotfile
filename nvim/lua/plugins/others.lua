@@ -16,7 +16,12 @@ return {
   -- The plugin makes start screen beautiful.
   {
     "nvimdev/dashboard-nvim",
-    event = "VimEnter",
+    -- Only load when no args after nvim command.
+    event = function()
+      if vim.fn.argc() == 0 then
+        return "VimEnter"
+      end
+    end,
     opts = function()
       local logo = [[
        ▄████▄   ▄▄▄       ▄████▄  ▄▄▄█████▓ █    ██   ██████  ███▄    █  ██▓▒██   ██▒
