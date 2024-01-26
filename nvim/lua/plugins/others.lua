@@ -221,6 +221,9 @@ return {
         },
       },
     },
+    config = function(_, opts)
+      require("lualine").setup(opts)
+    end,
   },
   -- The plugin make motion nice.
   {
@@ -242,6 +245,8 @@ return {
   },
   -- The plugin make buffer better.
   {
+    -- TODO: maybe I don't need this plugin.
+    enabled = false,
     "akinsho/bufferline.nvim",
     lazy = false,
     event = "VeryLazy",
@@ -319,6 +324,11 @@ return {
   {
     "echasnovski/mini.comment",
     version = false,
+    event = "BufReadPost",
+    config = true,
+  },
+  {
+    "folke/todo-comments.nvim",
     event = "BufReadPost",
     config = true,
   },
