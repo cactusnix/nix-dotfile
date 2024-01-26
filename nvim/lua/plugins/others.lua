@@ -95,7 +95,7 @@ return {
   -- The plugin show nice status line.
   {
     "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
+    event = "BufReadPost",
     opts = {
       options = {
         globalstatus = true,
