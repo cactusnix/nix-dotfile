@@ -25,17 +25,7 @@ return {
       lspsaga = {},
     },
     config = function(_, opts)
-      require("fidget").setup(opts.fidget)
-      require("neodev").setup()
-      require("lspsaga").setup(opts.lspsaga)
-      for name, icon in pairs(opts.signs) do
-        name = "DiagnosticSign" .. name
-        vim.fn.sign_define(
-          name,
-          { text = icon, texthl = name, linehl = "", numhl = name }
-        )
-      end
-      -- Watch lsp attach event to set keymap.
+      -- Watch lsp attach event to set keymap and config plugin.
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function()
           local keymap_set = require("utils").keymap_set
@@ -95,6 +85,16 @@ return {
           )
         end,
       })
+      require("fidget").setup(opts.fidget)
+      require("neodev").setup()
+      require("lspsaga").setup(opts.lspsaga)
+      for name, icon in pairs(opts.signs) do
+        name = "DiagnosticSign" .. name
+        vim.fn.sign_define(
+          name,
+          { text = icon, texthl = name, linehl = "", numhl = name }
+        )
+      end
       for _, server in ipairs(opts.servers) do
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
         require("lspconfig")[server].setup({
