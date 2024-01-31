@@ -37,7 +37,7 @@ return {
           )
           keymap_set(
             "n",
-            "K",
+            "gh",
             "<CMD>Lspsaga hover_doc<CR>",
             { desc = "Hover Documentation" }
           )
