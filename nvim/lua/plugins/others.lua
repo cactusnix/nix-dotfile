@@ -278,7 +278,7 @@ return {
   {
     "echasnovski/mini.animate",
     version = false,
-    event = "VeryLazy",
+    event = "BufReadPost",
     config = true,
   },
   -- The plugin make neovim more nice.
