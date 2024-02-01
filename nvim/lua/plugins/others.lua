@@ -228,7 +228,7 @@ return {
   -- The plugin make motion nice.
   {
     "folke/flash.nvim",
-    lazy = false,
+    event = "BufReadPost",
     config = true,
   },
   -- The plugin show indent blankline.
