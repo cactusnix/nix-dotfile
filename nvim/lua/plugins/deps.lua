@@ -11,7 +11,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    event = "VeryLazy",
+    event = "BufReadPost",
     opts = {
       ensure_installed = {
         "json",

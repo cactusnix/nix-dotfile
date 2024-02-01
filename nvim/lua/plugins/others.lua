@@ -245,11 +245,8 @@ return {
   },
   -- The plugin make buffer better.
   {
-    -- TODO: maybe I don't need this plugin.
-    enabled = false,
     "akinsho/bufferline.nvim",
-    lazy = false,
-    event = "VeryLazy",
+    event = "BufReadPost",
     keys = {
       { "<leader>bp", "<CMD>BufferLineTogglePin<CR>", desc = "[b]uffer [p]in" },
       {
