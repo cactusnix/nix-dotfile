@@ -247,7 +247,29 @@ return {
     "echasnovski/mini.indentscope",
     version = false,
     event = "BufReadPost",
-    config = true,
+    opts = {
+      symbol = "│",
+      options = {
+        try_as_border = true,
+      },
+    },
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = {
+          "help",
+          "dashboard",
+          "lazy",
+          "notify",
+        },
+        callback = function()
+          ---@diagnostic disable-next-line: inject-field
+          vim.b.miniindentscope_disable = true
+        end,
+      })
+    end,
+    config = function(_, opts)
+      require("mini.indentscope").setup(opts)
+    end,
   },
   -- The plugin measure startup time, it uses vim script so maybe not need config = true.
   {
