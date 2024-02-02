@@ -16,6 +16,9 @@ return {
         completion = {
           completionopt = "menu,menuone,noselect",
         },
+        experimental = {
+          ghost_text = true,
+        },
         snippet = {
           expand = function(args)
             require("luasnip").lsp_expand(args.body) -- Use LuaSnip engine.
