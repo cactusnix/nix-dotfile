@@ -155,6 +155,17 @@ return {
           },
           {
             function()
+              return require("lazy.status").updates()
+            end,
+            cond = function()
+              return require("lazy.status").has_updates()
+            end,
+            on_click = function()
+              vim.cmd("Lazy update")
+            end,
+          },
+          {
+            function()
               local clients = vim.lsp.get_active_clients({
                 bufnr = 0,
               })
