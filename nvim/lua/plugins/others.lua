@@ -284,7 +284,9 @@ return {
   -- The plugin make buffer better.
   {
     "akinsho/bufferline.nvim",
-    event = "BufReadPost",
+    -- FIX: Why it can be loaded at BufReadPost?
+    lazy = false,
+    event = "VeryLazy",
     keys = {
       { "<leader>bp", "<CMD>BufferLineTogglePin<CR>", desc = "[b]uffer [p]in" },
       {
