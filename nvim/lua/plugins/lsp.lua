@@ -4,8 +4,6 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "folke/neodev.nvim",
-      -- The plugin will show lsp process.
-      "j-hui/fidget.nvim",
       -- The plugin make lsp experience better.
       "nvimdev/lspsaga.nvim",
     },
@@ -21,7 +19,6 @@ return {
         Hint = require("constants.icons").lightbulb,
         Info = require("constants.icons").info,
       },
-      fidget = {},
       lspsaga = {},
     },
     config = function(_, opts)
@@ -85,7 +82,6 @@ return {
           )
         end,
       })
-      require("fidget").setup(opts.fidget)
       require("neodev").setup()
       require("lspsaga").setup(opts.lspsaga)
       for name, icon in pairs(opts.signs) do
