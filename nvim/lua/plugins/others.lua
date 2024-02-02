@@ -309,7 +309,14 @@ return {
       { "[b", "<CMD>BufferLineCyclePrev<CR>", desc = "Prev buffer" },
       { "]b", "<CMD>BufferLineCycleNext<CR>", desc = "Next buffer" },
     },
-    config = true,
+    opts = {
+      options = {
+        diagnostics = "nvim_lsp",
+      },
+    },
+    config = function(_, opts)
+      require("bufferline").setup(opts)
+    end,
   },
   -- The plugin make ui animate better.
   {

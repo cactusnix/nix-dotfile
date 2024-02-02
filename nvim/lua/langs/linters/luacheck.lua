@@ -29,7 +29,9 @@ return {
     "[^:]+:(%d+):(%d+)-(%d+): %((%a)(%d+)%) (.*)",
     { "lnum", "col", "end_col", "severity", "code", "message" },
     {
+      ---@diagnostic disable-next-line: assign-type-mismatch
       W = vim.diagnostic.severity.WARN,
+      ---@diagnostic disable-next-line: assign-type-mismatch
       E = vim.diagnostic.severity.ERROR,
     },
     { source = "luacheck" },
