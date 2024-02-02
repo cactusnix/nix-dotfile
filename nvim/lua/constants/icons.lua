@@ -16,5 +16,8 @@ M.removed = ""
 M.renamed = ""
 M.flash = ""
 M.search = ""
+M.file = "󰈚"
+M.word = "󰈭"
+M.quit = ""
 
 return M

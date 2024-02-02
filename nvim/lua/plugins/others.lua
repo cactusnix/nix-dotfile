@@ -44,22 +44,27 @@ return {
             {
               action = "Telescope find_files",
               desc = " Find file",
-              icon = " ",
+              icon = require("constants.icons").search .. " ",
               key = "SPC SPC",
             },
             {
               action = "Telescope oldfiles",
               desc = " Find recent files",
-              icon = " ",
+              icon = require("constants.icons").file .. " ",
               key = "SPC f r",
             },
             {
               action = "Telescope live_grep",
               desc = " Find words",
-              icon = " ",
+              icon = require("constants.icons").word .. " ",
               key = "SPC f w",
             },
-            { action = "qa", desc = " Quit", icon = " ", key = "q" },
+            {
+              action = "qa",
+              desc = " Quit",
+              icon = require("constants.icons").quit .. " ",
+              key = "q",
+            },
           },
           footer = function()
             local stats = require("lazy").stats()
