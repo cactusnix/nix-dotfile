@@ -15,5 +15,6 @@ M.modified = ""
 M.removed = ""
 M.renamed = ""
 M.flash = ""
+M.search = ""
 
 return M

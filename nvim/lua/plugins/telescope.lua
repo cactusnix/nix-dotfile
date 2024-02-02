@@ -29,5 +29,25 @@ return {
         desc = "[f]ind [f]iles",
       },
     },
+    opts = {
+      defaults = {
+        sorting_strategy = "ascending",
+        prompt_prefix = " " .. require("constants.icons").search .. "  ",
+        selection_caret = "  ",
+        path_display = { "truncate" },
+        layout_config = {
+          horizontal = {
+            prompt_position = "top",
+            preview_width = 0.55,
+          },
+          width = 0.87,
+          height = 0.80,
+          preview_cutoff = 120,
+        },
+      },
+    },
+    config = function(_, opts)
+      require("telescope").setup(opts)
+    end,
   },
 }
