@@ -381,4 +381,24 @@ return {
     event = "BufReadPost",
     config = true,
   },
+  {
+    "akinsho/toggleterm.nvim",
+    keys = function()
+      local Terminal = require("toggleterm.terminal").Terminal
+      local lazygit = Terminal:new({
+        cmd = "lazygit",
+        direction = "float",
+      })
+      return {
+        {
+          "<leader>lg",
+          function()
+            lazygit:toggle()
+          end,
+          desc = "[l]azy[g]it termial",
+        },
+      }
+    end,
+    config = true,
+  },
 }
