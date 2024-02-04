@@ -14,6 +14,7 @@ return {
     event = "BufReadPost",
     opts = {
       ensure_installed = {
+        "fish",
         "json",
         "lua",
         "luadoc",
