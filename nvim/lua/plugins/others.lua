@@ -384,17 +384,14 @@ return {
   {
     "akinsho/toggleterm.nvim",
     keys = function()
-      local Terminal = require("toggleterm.terminal").Terminal
-      local lazygit = Terminal:new({
-        cmd = "lazygit",
-        direction = "float",
-      })
+      local toggle_terminal = require("utils").toggle_terminal
       return {
         {
           "<leader>lg",
-          function()
-            lazygit:toggle()
-          end,
+          toggle_terminal({
+            cmd = "lazygit",
+            direction = "float",
+          }),
           desc = "[l]azy[g]it termial",
         },
       }

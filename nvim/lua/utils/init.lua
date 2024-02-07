@@ -33,4 +33,13 @@ function M.get_config_by_lang(lang, type)
     .. vim.tbl_get(lang_map, lang, type)
 end
 
+-- Toggle terminal
+function M.toggle_terminal(opts)
+  local Terminal = require("toggleterm.terminal").Terminal
+  local terminal = Terminal:new(opts)
+  return function()
+    terminal:toggle()
+  end
+end
+
 return M
