@@ -1,0 +1,1 @@
+-- brew list --formula -1 展示所有已经安装的formula
