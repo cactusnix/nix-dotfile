@@ -122,14 +122,6 @@ return {
         },
         lualine_b = {
           {
-            "filetype",
-            icon_only = true,
-            padding = {
-              left = 1,
-              right = 0,
-            },
-          },
-          {
             "filename",
             file_status = true,
           },
