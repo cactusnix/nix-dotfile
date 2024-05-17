@@ -16,6 +16,7 @@ return {
       formatters_by_ft = {
         lua = { "lua_fmt" },
         swift = { "swift_format" },
+        rust = { "rustfmt" },
       },
       format_on_save = {
         lsp_fallback = true, -- Use lsp format as fallback.
