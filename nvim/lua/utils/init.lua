@@ -27,6 +27,9 @@ function M.get_config_by_lang(lang, type)
       fmt = "/stylua.toml",
       lint = "/.luacheck",
     },
+    rust = {
+      fmt = "/rustfmt.toml",
+    },
   }
   return basic_path
     .. vim.tbl_get(type_map, type)

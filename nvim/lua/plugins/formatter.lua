@@ -24,6 +24,7 @@ return {
       },
       formatters = {
         lua_fmt = require("langs.formatters.stylua"),
+        rustfmt = require("langs.formatters.rustfmt"),
       },
     },
     config = function(_, opts)
