@@ -6,6 +6,11 @@
 
 - Lua (LSP: lua-language-server by Homebrew, Formatter: stylua by Homebrew)
 
+### Formatters
+
+1. lua stylua brew
+2. jsonc prettier brew
+
 ### Bugs
 
 - [ ] lint not execute when buf read.
