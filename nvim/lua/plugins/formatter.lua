@@ -18,7 +18,7 @@ return {
         swift = { "swift_format" },
         rust = { "rustfmt" },
         json = { "jq" },
-        jsonc = { "jq" },
+        jsonc = { "prettier" },
       },
       format_on_save = {
         lsp_fallback = true, -- Use lsp format as fallback.
