@@ -12,6 +12,7 @@ return {
       servers = {
         "lua_ls",
         "sourcekit",
+        "rust_analyzer",
       },
       signs = {
         Error = require("constants.icons").close,

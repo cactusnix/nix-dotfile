@@ -17,6 +17,7 @@ return {
         "astro",
         "fish",
         "json",
+        "jsonc",
         "lua",
         "luadoc",
         "markdown",
