@@ -13,6 +13,7 @@ return {
         "lua_ls",
         "sourcekit",
         "rust_analyzer",
+        "jsonls",
       },
       signs = {
         Error = require("constants.icons").close,

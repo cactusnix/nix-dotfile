@@ -17,8 +17,6 @@ return {
         lua = { "lua_fmt" },
         swift = { "swift_format" },
         rust = { "rustfmt" },
-        json = { "jq" },
-        jsonc = { "prettier" },
       },
       format_on_save = {
         lsp_fallback = true, -- Use lsp format as fallback.

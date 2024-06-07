@@ -2,14 +2,31 @@
 
 ### Plugins
 
+### Formatter Rules
+
+1. max-width: 80
+2. spaces: 2
+
 ### Supported Languages
 
-- Lua (LSP: lua-language-server by Homebrew, Formatter: stylua by Homebrew)
+### Astro
 
-### Formatters
+- LSP: lua-language-server
+- Formatter: stylua
 
-1. lua stylua brew
-2. jsonc prettier brew
+### Fish
+
+### Json
+
+- LSP: vscode-langservers-extracted
+- Formatter: fallback to lsp
+
+### Jsonc
+
+### Rust
+
+- LSP: rust-analazer
+- Formatter: rustfmt
 
 ### Bugs
 
