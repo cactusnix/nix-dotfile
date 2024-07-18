@@ -5,7 +5,24 @@ return {
     keys = {
       { "-", "<CMD>Oil<CR>", { desc = "Open parent directory" } },
     },
-    config = true,
+    opts = {
+      view_options = {
+        show_hidden = true,
+        is_always_hidden = function(name)
+          -- TODO: make this code better
+          local hidden = {
+            node_modules = true,
+          }
+          if hidden[name] then
+            return true
+          end
+          return false
+        end,
+      },
+    },
+    config = function(_, opts)
+      require("oil").setup(opts)
+    end,
   },
   -- The plugin can make jk to escape better.
   {
