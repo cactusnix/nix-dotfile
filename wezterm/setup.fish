@@ -1,5 +1,5 @@
-if type brew >/dev/null 2>&1
+if type brew -q 
   echo "Homebrew is installed"
 else
-  echod "Please install homebrew first"
+  echo "Please install homebrew first"
 end
