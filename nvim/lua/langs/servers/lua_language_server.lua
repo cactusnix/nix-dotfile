@@ -1,5 +1,3 @@
-print("brew")
-print("lua-language-server")
 return {
   meta = {
     url = "https://github.com/LuaLS/lua-language-server",
